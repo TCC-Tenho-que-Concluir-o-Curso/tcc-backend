@@ -7,25 +7,6 @@ from app.controllers.utils import get_user_type
 
 from app.models.user_model import User
 
-# @app.before_request
-# def verify_firebase_auth():
-#     try:
-#         # Extract Firebase UID from the Authorization header
-#         # Example: Firebase UID as a Bearer token
-#         firebase_uid = request.headers.get('Authorization')
-#         print("FIREBASE UID", firebase_uid)
-
-#         # Verify the Firebase UID
-#         user = auth.get_user(firebase_uid)
-
-#         # Store the authenticated user in the request context
-#         request.user = user
-#         # return from middleware
-
-#     except Exception as e:
-#         # Authentication failed, return an authentication error
-#         return jsonify({"error": "Authentication failed."}), 401
-
 
 def delete_all_users():
     users = User.objects()
@@ -38,7 +19,6 @@ def add_or_replace_user():
     """
     - ADD/Replace user to bd.
     """
-    # delete_all_users()
     print("FAZENDO LOGIN")
     firebase_uid = request.json.get('firebase_uid')
     avatar_url = request.json.get('avatar_url')

@@ -63,7 +63,6 @@ def get_tcc_by_title(title):
     """
     - GET tcc by title.
     """
-    # title = request.args.get('title')
     print("title", title)
     try:
         tcc = TCC.objects.get(title=title)
@@ -99,8 +98,6 @@ def list_tcc_by_type():
 
     json_data = loads(tccs.to_json())
     print('json_data \n', json_data)
-    # json_data = [{"title": obj["title"], "body": obj["body"]}
-    #              for obj in json_data]
 
     return jsonify(json_data), 200
 
@@ -110,18 +107,9 @@ def list_tcc_by_author(authorId):
     """
     - GET all tccs filtered by author.
     """
-    # authorId = request.args.get('authorId')
     user = getattr(request, 'user', None)
     user_type = get_user_type(user.email)
 
-    # if user_type == User_Type.Teacher:
-    #     tccs = TCC.objects(authorId=authorId, type=User_Type.Student)
-    #     print("FAZENDO GET DE TCCs DE ALUNOS")
-    # elif user_type == User_Type.Student:
-    #     tccs = TCC.objects(authorId=authorId, type=User_Type.Teacher)
-    #     print("FAZENDO GET DE TCCs DE PROFESSORES")
-    # else:
-    #     return jsonify({'message': 'Por favor, logue com um email acadêmico'}), 401
     tccs = TCC.objects(authorId=authorId)
 
     if tccs == None:
@@ -129,13 +117,9 @@ def list_tcc_by_author(authorId):
 
     json_data = loads(tccs.to_json())
 
-    # filter json_data to remove the items that have the same type as the user
     print('json_data \n', json_data)
     json_data = [tcc for tcc in json_data if (
         tcc["type"] != user_type.value or tcc["authorId"] == user.uid)]
-
-    # json_data = [{"title": obj["title"], "body": obj["body"]}
-    #              for obj in json_data]
 
     return jsonify(json_data), 200
 
@@ -194,8 +178,6 @@ def list_all_tccs():
     tccs = TCC.objects().all()
     json_data = loads(tccs.to_json())
     print('json_data \n', json_data)
-    # json_data = [{"title": obj["title"], "body": obj["body"]}
-    #              for obj in json_data]
 
     return jsonify(json_data), 200
 

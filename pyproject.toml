@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "tcc-backend"
+version = "0.1.0"
+description = ""
+authors = ["Leonardo Veiga <leonardo.porfirio@ccc.ufcg.edu.br>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+flask-pydantic-spec = "0.4.5"
+Flask = "2.3"
+mongoengine = "0.27.0"
+python-dotenv = "^1.0.0"
+firebase-admin = "^6.2.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

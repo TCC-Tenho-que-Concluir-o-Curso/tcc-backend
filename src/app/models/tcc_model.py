@@ -2,11 +2,7 @@ from mongoengine import Document, StringField, EnumField, EmbeddedDocumentListFi
 from enum import Enum
 
 from app.models.comment_model import Comment
-
-
-class User_Type(Enum):
-    Student = 'Student'
-    Teacher = 'Teacher'
+from app.models.user_model import User_Type
 
 
 class TCC(Document):

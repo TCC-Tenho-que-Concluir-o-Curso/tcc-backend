@@ -8,7 +8,6 @@ from app.controllers.utils import get_user_type
 from app.models.comment_model import Comment
 
 from app.models.tcc_model import TCC, User_Type
-from app.schemas.tcc_schema import TCC_DTO, TCC_list_DTO
 
 
 @app.before_request

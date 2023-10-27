@@ -4,7 +4,7 @@ from app import app, spec
 from flask import request, jsonify
 from flask_pydantic_spec import (Response, Request)
 from json import loads
-from app.controllers.utils import get_user_type
+from app.utils import get_user_type
 from app.models.comment_model import Comment
 
 from app.models.tcc_model import TCC, User_Type

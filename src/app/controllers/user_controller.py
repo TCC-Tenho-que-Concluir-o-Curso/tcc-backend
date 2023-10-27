@@ -3,7 +3,7 @@ from app import app, spec
 from flask import request, jsonify
 from flask_pydantic_spec import (Response, Request)
 from json import loads
-from app.controllers.utils import get_user_type
+from app.utils import get_user_type
 
 from app.models.user_model import User, User_Type, Tag
 

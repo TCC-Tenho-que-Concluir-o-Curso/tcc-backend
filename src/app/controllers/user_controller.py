@@ -83,7 +83,6 @@ def get_user_by_email(email):
 @app.get('/users')
 def get_all_users():
     users = User.objects()
-    # filter users by the current user type
     user = getattr(request, 'user', None)
     user_type = get_user_type(user.email)
 
@@ -100,8 +99,6 @@ def get_all_users():
     print(resp)
 
     return jsonify(resp*10), 200
-
-# add tags to user
 
 
 @app.post('/user/tags')

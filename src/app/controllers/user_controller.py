@@ -35,9 +35,8 @@ def add_or_replace_user():
     user = User.objects(firebase_uid=firebase_uid).first()
 
     if user:
-        tags = [Tag(tag) for tag in tags]
         user.update(type=type, avatar_url=avatar_url, email=email,
-                    name=name, tags=tags)
+                    name=name)
         print("User atualizado.")
         return jsonify({'message': 'User atualizado.'}), 200
 

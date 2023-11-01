@@ -6,7 +6,7 @@ authors = ["Leonardo Veiga <leonardo.porfirio@ccc.ufcg.edu.br>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.9"
 flask-pydantic-spec = "0.4.5"
 Flask = "2.3"
 mongoengine = "0.27.0"

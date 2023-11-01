@@ -87,9 +87,9 @@ def get_all_users():
     user_type = get_user_type(user.email)
 
     if user_type == User_Type.Student:
-        users = User.objects(type=User_Type.Student)
-    else:
         users = User.objects(type=User_Type.Teacher)
+    else:
+        users = User.objects(type=User_Type.Student)
 
     resp = []
     for user in users:

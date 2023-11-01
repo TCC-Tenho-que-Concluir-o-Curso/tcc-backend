@@ -98,7 +98,7 @@ def get_all_users():
 
     print(resp)
 
-    return jsonify(resp*10), 200
+    return jsonify(resp), 200
 
 
 @app.post('/user/tags')

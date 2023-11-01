@@ -98,7 +98,7 @@ def list_tcc_by_type():
     json_data = loads(tccs.to_json())
     print('json_data \n', json_data)
 
-    return jsonify(json_data), 200
+    return jsonify(json_data * 10), 200
 
 
 @app.get('/tcc/author/<authorId>')

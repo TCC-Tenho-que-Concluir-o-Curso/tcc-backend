@@ -74,7 +74,7 @@ def get_tcc_by_title(title):
         return jsonify({'message': 'TCC not found'}), 404
 
 
-@app.get('/tcc')
+@app.get('/tcc2')
 # @spec.validate(resp=Response(HTTP_200=TCC_list_DTO))
 def list_tcc_by_type():
     """
@@ -181,7 +181,7 @@ def list_all_tccs():
     return jsonify(json_data), 200
 
 
-@app.get('/delete_all_tccs')
+@app.get('/tcc')
 def delete_all_posts():
     """
     - DELETE all tccs.
